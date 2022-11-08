@@ -7,12 +7,12 @@ class PhoneBook:
     def __init__(self):
         pass
 
-    def add(self, name: str, phone: str, comment: str, id: str = None):
+    def add(self, name: str, surname: str, phone: str, comment: str, id: str = None):
         if id:
-            user = Contact.Contact(id, name, phone, comment)
+            user = Contact.Contact(id, name, surname, phone, comment)
             self.last_id = str(id)
         else:
-            user = Contact.Contact(self.last_id, name, phone, comment)
+            user = Contact.Contact(self.last_id, name, surname, phone, comment)
         self.contact.append(user)
         self.last_id = str(int(self.last_id) + 1)
 
@@ -43,10 +43,11 @@ class PhoneBook:
                 break
         return self.contact[get_id] if get_id else None
 
-    def set(self, id: int, name: str, phone: str, comment: str):
+    def set(self, id: int, name: str, surname: str, phone: str, comment: str):
         for (index, user) in enumerate(self.contact):
             if int(user.id) == id:
                 self.contact[index].name = name
+                self.contact[index].surname = surname
                 self.contact[index].phone = phone
                 self.contact[index].comment = comment
 

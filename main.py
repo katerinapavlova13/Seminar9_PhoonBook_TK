@@ -1,5 +1,3 @@
-from View import Window
+import Window
 
-window = Window(450, 250, 'Телефоная книга')
-window.run()
-# window.root.protocol('WM_DELETE_WINDOW', window.on_closing())
+Window.main()
