@@ -28,7 +28,7 @@ def open_file():
             Model.my_phonebook.add(contact[1], contact[2], contact[3], contact[4], contact[0])
     new_table()
 
-def save_as_file():
+def save_file():
     global main_table
     types = (("Текстовый файл", "*.txt"),)
     full_file_name = asksaveasfilename(title='Сохранить как...', filetypes=types, initialfile='phonebook.txt')
